@@ -1,0 +1,1 @@
+# Load the dependencieslibrary(mice)# Impute the missing data m timesimp <- mice(nhanes, m = 5)# Analize completed datasets using linear modelfit <- with(imp, lm(chl ~ bmi + age))# Combine parameter estimatesest <- pool(fit)# Print summary of estimationsummary(est)
